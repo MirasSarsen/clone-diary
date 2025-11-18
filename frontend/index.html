@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone Diary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Clone Diary</h1>
+
+    <div id="entry-form">
+        <textarea id="entry-text" placeholder="Напиши сюда, что ты сделал..."></textarea>
+
+        <!-- Категория -->
+        <label for="category">Категория:</label>
+        <select id="category">
+            <option value="Прогулка">Прогулка</option>
+            <option value="Работа">Работа</option>
+            <option value="Учёба">Учёба</option>
+            <option value="Спорт">Спорт</option>
+            <option value="Отдых">Отдых</option>
+        </select>
+
+        <!-- Персонаж -->
+        <label for="persona">Персонаж:</label>
+        <select id="persona">
+            <option value="optimist">Оптимист</option>
+            <option value="pessimist">Пессимист</option>
+            <option value="joker">Шутник</option>
+            <option value="realist">Реалист</option>
+        </select>
+        <div class="entry">
+            <span class="tag Работа">Работа</span>
+            <h3>Сегодня сделал отчёт</h3>
+            <p>Оригинал: закончил проект вовремя.</p>
+            <p class="clone">Альтернатива: если бы я начал позже, пришлось бы ночами сидеть...</p>
+        </div>
+
+        <br>
+        <button id="save-btn">Сохранить</button>
+    </div>
+
+    <h2>Записи</h2>
+    <div id="entries"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
