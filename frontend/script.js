@@ -24,10 +24,13 @@ saveBtn.addEventListener("click", async () => {
     const text = entryText.value.trim();
     const category = categorySelect.value;
     const persona = personaSelect.value;
+    const loading = document.getElementById("loading");
 
     if (text === "") return;
 
     try {
+        loading.style.display = "block"; // 🔵 ПОКАЗАТЬ ИНДИКАТОР
+
         const response = await fetch("http://localhost:5000/api/clone", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -44,5 +47,7 @@ saveBtn.addEventListener("click", async () => {
     } catch (err) {
         console.error(err);
         alert("Не удалось связаться с сервером");
+    } finally {
+        loading.style.display = "none";
     }
 });
